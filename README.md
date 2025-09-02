@@ -3,7 +3,6 @@
 [![GitHub release](https://img.shields.io/github/release/BluuArtiis-FR/homelab-media-server.svg)](https://github.com/BluuArtiis-FR/homelab-media-server/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Docker](https://img.shields.io/badge/Docker-Compatible-blue.svg)](https://www.docker.com/)
-[![Author](BluuArtiis-FR).
 
 **Serveur média automatisé complet avec VPN, téléchargement automatique et streaming 1080p optimisé sans GPU.**
 
