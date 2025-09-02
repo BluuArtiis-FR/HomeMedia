@@ -13,6 +13,7 @@
 - [Installation Rapide](#installation-rapide)
 - [Configuration](#configuration)
 - [Services Inclus](#services-inclus)
+- [Sécurité](#sécurité)
 - [Documentation](#documentation)
 - [Contribution](#contribution)
 - [Licence](#licence)
@@ -37,11 +38,14 @@ cd homelab-media-server
 cp .env.example .env
 # Modifier .env avec vos credentials VPN
 
-# Rendre le script exécutable
-chmod +x install.sh
+# Rendre les scripts exécutables
+chmod +x install.sh generate-compose.sh
 
-# Lancer l'installation interactive
+# Installation automatique
 sudo ./install.sh
+
+# OU génération modulaire
+./generate-compose.sh
 ```
 
 ## ✨ Fonctionnalités
@@ -80,20 +84,60 @@ Internet → ProtonVPN → Serveur Principal ← → Reverse Proxy SSL
 
 Consultez le [schéma détaillé](docs/architecture.md) pour plus d'informations.
 
+## ⚙️ Configuration
+
+### 1. **Fichier .env**
+```bash
+# Copier le template
+cp .env.example .env
+
+# Modifier avec vos credentials
+nano .env
+```
+
+### 2. **Credentials VPN Requis**
+- Nom d'utilisateur ProtonVPN
+- Mot de passe ProtonVPN
+- Serveur préféré (optionnel)
+
+### 3. **Génération Modulaire**
+```bash
+# Script interactif pour choisir les services
+./generate-compose.sh
+```
+
+Voir le [guide de configuration détaillé](docs/configuration.md).
+
 ## 🚀 Services Inclus
 
-| Service | Port | Description |
-|----|----|----|
-| Jellyfin | 8096 | Serveur média streaming |
-| Jellyseerr | 5055 | Interface requêtes média |
-| Sonarr | 8989 | Gestion séries TV |
-| Radarr | 7878 | Gestion films |
-| Lidarr | 8686 | Gestion musique |
-| Readarr | 8787 | Gestion livres |
-| qBittorrent | 8080 | Client torrent |
-| Prowlarr | 9696 | Indexeurs centralisés |
-| FlareSolverr | 8191 | Bypass Cloudflare |
-| Bazarr | 6767 | Sous-titres automatiques |
+| Service | Port | Description | VPN |
+|----|----|----|:----:|
+| Jellyfin | 8096 | Serveur média streaming | ❌ |
+| Jellyseerr | 5055 | Interface requêtes média | ❌ |
+| Sonarr | 8989 | Gestion séries TV | ❌ |
+| Radarr | 7878 | Gestion films | ❌ |
+| Lidarr | 8686 | Gestion musique | ❌ |
+| Readarr | 8787 | Gestion livres | ❌ |
+| qBittorrent | 8080 | Client torrent | ✅ |
+| Prowlarr | 9696 | Indexeurs centralisés | ✅ |
+| FlareSolverr | 8191 | Bypass Cloudflare | ✅ |
+| Bazarr | 6767 | Sous-titres automatiques | ❌ |
+
+## 🔒 Sécurité
+
+### Protection Réseau
+- **VPN obligatoire** pour téléchargements
+- **Firewall UFW** avec règles strictes
+- **Fail2Ban** anti-bruteforce SSH
+- **Isolation containers** Docker
+
+### Bonnes Pratiques
+- Credentials VPN sécurisés
+- Ports non-standard disponibles
+- Logs de sécurité centralisés
+- Mises à jour automatiques
+
+Voir le [guide sécurité](docs/troubleshooting.md#sécurité).
 
 ## 📖 Documentation
 
@@ -101,6 +145,7 @@ Consultez le [schéma détaillé](docs/architecture.md) pour plus d'informations
 - [Configuration des services](docs/configuration.md)
 - [Guide de dépannage](docs/troubleshooting.md)
 - [FAQ](docs/faq.md)
+- [Architecture système](docs/architecture.md)
 
 ## 🤝 Contribution
 
