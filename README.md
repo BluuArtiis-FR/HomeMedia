@@ -141,6 +141,7 @@ Voir le [guide sécurité](docs/troubleshooting.md#sécurité).
 
 ## 📖 Documentation
 
+- **[🚀 Démarrage Rapide](docs/quick-start.md)** ⭐ *Commencez ici !*
 - [Guide d'installation détaillé](docs/installation.md)
 - [Configuration des services](docs/configuration.md)
 - [Guide de dépannage](docs/troubleshooting.md)

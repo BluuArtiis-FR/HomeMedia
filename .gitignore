@@ -1,0 +1,175 @@
+# 🔒 HomeLab Media Server - GitIgnore
+
+# ==========================================
+# FICHIERS SENSIBLES - NE JAMAIS COMMITER
+# ==========================================
+.env
+*.key
+*.pem
+*.cert
+*.crt
+credentials.json
+secrets.yaml
+
+# ==========================================
+# DOCKER & COMPOSE
+# ==========================================
+docker-compose.yml
+docker-compose.override.yml
+.docker/
+
+# ==========================================
+# DONNÉES & CONFIGURATION
+# ==========================================
+config/
+data/
+downloads/
+media/
+/opt/homelab/
+
+# Volumes Docker
+*.volume
+
+# ==========================================
+# LOGS
+# ==========================================
+*.log
+logs/
+*.log.*
+/var/log/
+
+# ==========================================
+# BACKUPS
+# ==========================================
+*.backup
+*.bak
+backups/
+*.tar.gz
+*.zip
+
+# ==========================================
+# SYSTÈME D'EXPLOITATION
+# ==========================================
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# ==========================================
+# ÉDITEURS & IDEs
+# ==========================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# JetBrains
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+Sessionx.vim
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+sftp-config.json
+Package Control.last-run
+Package Control.ca-list
+Package Control.ca-bundle
+Package Control.system-ca-bundle
+Package Control.cache/
+Package Control.ca-certs/
+Package Control.merged-ca-bundle
+Package Control.user-ca-bundle
+oscrypto-ca-bundle.crt
+bh_unicode_properties.cache
+
+# ==========================================
+# TEMPORAIRES
+# ==========================================
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.*.swp
+.*.swo
+
+# ==========================================
+# DIVERS
+# ==========================================
+.cache/
+.npm/
+node_modules/
+.pytest_cache/
+__pycache__/
+*.pyc
+.env.local
+.env.*.local
+
+# ==========================================
+# FICHIERS DE BUILD
+# ==========================================
+dist/
+build/
+*.egg-info/
