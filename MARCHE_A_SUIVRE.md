@@ -61,7 +61,7 @@ sudo apt update && sudo apt upgrade -y
 
 # 2. Cloner le projet mis à jour
 cd ~
-git clone https://github.com/VOTRE-USERNAME/HomeMedia.git
+git clone https://github.com/BluuArtiis-FR/HomeMedia.git
 cd HomeMedia
 
 # 3. Configurer le fichier .env

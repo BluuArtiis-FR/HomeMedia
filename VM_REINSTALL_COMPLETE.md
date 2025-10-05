@@ -133,10 +133,10 @@ sudo reboot
 cd ~
 
 # Cloner le dépôt (ou télécharger depuis GitHub)
-git clone https://github.com/VOTRE-USERNAME/HomeMedia.git
+git clone https://github.com/BluuArtiis-FR/HomeMedia.git
 
 # Si vous n'avez pas git, télécharger l'archive
-# wget https://github.com/VOTRE-USERNAME/HomeMedia/archive/main.zip
+# wget https://github.com/BluuArtiis-FR/HomeMedia/archive/main.zip
 # unzip main.zip
 # mv HomeMedia-main HomeMedia
 
