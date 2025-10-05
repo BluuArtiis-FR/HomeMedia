@@ -293,7 +293,7 @@ create_directory_structure() {
 
     # Création des répertoires principaux
     mkdir -p "$INSTALL_DIR"/{config,data,downloads,media}
-    mkdir -p "$INSTALL_DIR"/media/{movies,tv,music,books}
+    mkdir -p "$INSTALL_DIR"/media/{movies,tv,anime,music,books}
     mkdir -p "$INSTALL_DIR"/config/{jellyfin,sonarr,radarr,lidarr,readarr,qbittorrent,prowlarr,bazarr,jellyseerr}
 
     # Permissions

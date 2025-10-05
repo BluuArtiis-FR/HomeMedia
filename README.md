@@ -55,10 +55,11 @@ sudo ./install.sh
 - **Jellyseerr** (5055) - Interface de requêtes compatible Jellyfin
 
 ### 📚 **Gestion de Contenu**
-- **Sonarr** (8989) - Gestion automatique des séries TV
+- **Sonarr** (8989) - Gestion automatique des séries TV et anime
 - **Radarr** (7878) - Gestion automatique des films
 - **Lidarr** (8686) - Gestion de la musique (support Spotify)
 - **Readarr** (8787) - Gestion des livres et audiobooks
+- **Support natif** - Bibliothèques séparées pour Films, Séries TV et Anime
 
 ### ⬇️ **Téléchargement & Indexation**
 - **qBittorrent** (8080) - Client torrent avec interface web

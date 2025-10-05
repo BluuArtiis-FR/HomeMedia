@@ -104,7 +104,7 @@ generate_compose() {
     echo -e "${BLUE}🔧 Génération du docker-compose.yml...${NC}"
 
     cat > "$COMPOSE_FILE" << 'COMPOSE_HEADER'
-version: '3.8'
+# Version Docker Compose (optionnelle depuis v2.x)
 
 networks:
   homelab:
@@ -204,7 +204,7 @@ EOF
 
         "sonarr")
             cat >> "$COMPOSE_FILE" << 'EOF'
-  # 📺 Sonarr - Gestion Séries TV
+  # 📺 Sonarr - Gestion Séries TV et Anime
   sonarr:
     image: linuxserver/sonarr:latest
     container_name: sonarr
@@ -213,6 +213,7 @@ EOF
     volumes:
       - ${CONFIG_PATH:-./config}/sonarr:/config
       - ${MEDIA_PATH:-./media}/tv:/tv
+      - ${MEDIA_PATH:-./media}/anime:/anime
       - ${DOWNLOADS_PATH:-./downloads}:/downloads
     environment:
       - PUID=${PUID:-1000}
@@ -300,7 +301,9 @@ EOF
       - "${BAZARR_PORT:-6767}:6767"
     volumes:
       - ${CONFIG_PATH:-./config}/bazarr:/config
-      - ${MEDIA_PATH:-./media}:/media
+      - ${MEDIA_PATH:-./media}/movies:/movies
+      - ${MEDIA_PATH:-./media}/tv:/tv
+      - ${MEDIA_PATH:-./media}/anime:/anime
     environment:
       - PUID=${PUID:-1000}
       - PGID=${PGID:-1000}
@@ -425,7 +428,7 @@ generate_full_compose() {
 
     # Header
     cat > "$COMPOSE_FILE" << 'HEADER'
-version: '3.8'
+# Version Docker Compose (optionnelle depuis v2.x)
 
 networks:
   homelab:
